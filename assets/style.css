@@ -1,3 +1,4 @@
+/* Parallax + Global Styles */
 body {
   background: linear-gradient(to bottom, #121212, #1c1c1c, #2c2c2c);
   background-attachment: fixed;
@@ -10,42 +11,45 @@ body {
 }
 
 .container {
-  padding: 50px 20px;
+  padding: 60px 20px;
   animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
   margin-bottom: 0;
-  font-size: 3em;
+  font-size: 3.2em;
 }
 
 .subtitle {
   color: #ccc;
-  margin-top: 0;
-  margin-bottom: 50px;
-  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  font-size: 1.3em;
+  min-height: 40px;
 }
 
+/* Panels Layout */
 .panels {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   animation: slideUp 1.5s ease-out;
 }
 
+/* Panel Styling */
 .panel {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 300px;
+  width: 200px;
+  height: 380px;
   text-decoration: none;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
@@ -65,25 +69,28 @@ h1 {
 }
 
 .panel:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.3);
 }
 
 .panel:hover::before {
   opacity: 0.5;
 }
 
+/* Color Schemes */
 .blue { background: linear-gradient(145deg, #00cfff, #006aff); }
 .green { background: linear-gradient(145deg, #a2f54a, #4ea40e); }
 .orange { background: linear-gradient(145deg, #ffcc00, #ff6600); }
 .red { background: linear-gradient(145deg, #ff7c7c, #cc0000); }
 
+/* Footer */
 footer {
   color: #aaa;
   font-size: 0.9em;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
