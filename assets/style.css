@@ -1,4 +1,4 @@
-/* Parallax + Global Styles */
+/* Global Styles + Parallax Background */
 body {
   background: linear-gradient(to bottom, #121212, #1c1c1c, #2c2c2c);
   background-attachment: fixed;
@@ -28,7 +28,7 @@ h1 {
   min-height: 40px;
 }
 
-/* Panels Layout */
+/* Panel Layout */
 .panels {
   display: flex;
   justify-content: center;
@@ -42,11 +42,11 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 380px;
+  width: 280px;
+  height: 500px;
   text-decoration: none;
   color: white;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
@@ -77,7 +77,7 @@ h1 {
   opacity: 0.5;
 }
 
-/* Color Schemes */
+/* Panel Colors */
 .blue { background: linear-gradient(145deg, #00cfff, #006aff); }
 .green { background: linear-gradient(145deg, #a2f54a, #4ea40e); }
 .orange { background: linear-gradient(145deg, #ffcc00, #ff6600); }
@@ -88,6 +88,16 @@ footer {
   color: #aaa;
   font-size: 0.9em;
   margin-top: 60px;
+}
+
+/* Link Colors (Fix for readability) */
+a {
+  color: #bbb;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* Animations */
