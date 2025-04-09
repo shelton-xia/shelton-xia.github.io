@@ -1,5 +1,7 @@
 body {
-  background: #1c1c1c;
+  background: linear-gradient(to bottom, #121212, #1c1c1c, #2c2c2c);
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
