@@ -2,44 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chengxuan Xia | AI Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chengxuan Xia</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="container" style="flex-direction: column; text-align: center; padding-top: 3rem;">
-    <header>
-      <h1>Chengxuan Xia</h1>
-      <p>Applied & foundational GenAI research</p>
-      <a> xcx3205@gmail.com</a>
-    </header>
+  <div class="container">
+    <h1>Chengxuan Xia</h1>
+    <p class="subtitle">
+      <span id="typed-text"></span>
+    </p>
 
-    <main class="panels" style="max-width: 960px; margin: 3rem auto;">
-      <a href="about.html" class="panel panel-blue">
-        <h2>About</h2>
-        <p>background, contact, interests</p>
-      </a>
-      <a href="blogs/" class="panel panel-green">
-        <h2>Blog</h2>
-        <p>thoughts, code, learnings</p>
-      </a>
-      <a href="resume.html" class="panel panel-yellow">
-        <h2>Resume</h2>
-        <p>experience, skills, CV</p>
-      </a>
-      <a href="research.html" class="panel panel-orange">
-        <h2>Research</h2>
-        <p>publications, collaborations</p>
-      </a>
-    </main>
-    
+    <div class="panels">
+      <a href="about.html" class="panel blue">About</a>
+      <a href="blog.html" class="panel green">Blog</a>
+      <a href="resume.html" class="panel orange">Resume</a>
+      <a href="research.html" class="panel red">Research</a>
+    </div>
+
     <footer>
-      <p>&copy; 2025 Chengxuan Xia | exploring the future of intelligent systems</p>
-      <div class="social-icons">
+      <p>
+        <a href="mailto:xcx3205@gmail.com">xcx3205@gmail.com</a> |
         <a href="https://www.linkedin.com/in/chengxuanxia/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/shelton-xia" target="_blank">GitHub</a>
-      </div>
+      </p>
     </footer>
   </div>
+
+  <!-- Typing Effect Script -->
+  <script>
+    const words = ["AI Engineer", "NLP Specialist", "GenAI Developer", "Full Stack Builder"];
+    let i = 0;
+    let timer;
+
+    function typingEffect() {
+      const text = words[i].split("");
+      let j = 0;
+      const typedText = document.getElementById("typed-text");
+      typedText.textContent = "";
+
+      function type() {
+        if (j < text.length) {
+          typedText.textContent += text[j];
+          j++;
+          timer = setTimeout(type, 100);
+        } else {
+          setTimeout(erase, 1500);
+        }
+      }
+
+      function erase() {
+        if (typedText.textContent.length > 0) {
+          typedText.textContent = typedText.textContent.slice(0, -1);
+          timer = setTimeout(erase, 50);
+        } else {
+          i = (i + 1) % words.length;
+          type();
+        }
+      }
+
+      type();
+    }
+
+    typingEffect();
+  </script>
 </body>
 </html>
