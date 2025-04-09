@@ -30,36 +30,48 @@
 
   <!-- Typing Effect Script -->
   <script>
-    const words = ["AI Engineer", "NLP Specialist", "GenAI Startup Founder", "Full Stack Builder"];
+    const words = [
+      "GenAI Engineer",
+      "NLP Specialist",
+      "Full Stack Builder",
+      "SAAI Co-Founder"
+    ];
+  
     let i = 0, j = 0;
     let isDeleting = false;
-    const speed = 80;
-    const holdTime = 1000;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseAfterTyping = 500;
   
     function typeEffect() {
       const typedText = document.getElementById("typed-text");
       const word = words[i];
       
-      if (isDeleting) {
-        typedText.textContent = word.substring(0, j--);
+      if (!isDeleting) {
+        typedText.textContent = word.substring(0, j + 1);
+        j++;
+  
+        if (j === word.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseAfterTyping); // minimal pause
+          return;
+        }
       } else {
-        typedText.textContent = word.substring(0, j++);
+        typedText.textContent = word.substring(0, j - 1);
+        j--;
+  
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
       }
   
-      if (!isDeleting && j === word.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, holdTime);
-      } else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-        setTimeout(typeEffect, 100);
-      } else {
-        setTimeout(typeEffect, speed);
-      }
+      setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
     }
   
     typeEffect();
   </script>
+
 
 </body>
 </html>
