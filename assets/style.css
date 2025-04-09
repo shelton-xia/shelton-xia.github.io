@@ -10,7 +10,11 @@ body {
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 4rem 0;
+  gap: 3rem;
 }
 
 .left-panel {
@@ -26,6 +30,7 @@ body {
   background-position: center;
   background-blend-mode: multiply;
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .left-panel h1 {
@@ -41,10 +46,13 @@ body {
 }
 
 .right-panel {
-  flex: 1;
+  max-width: 800px;
+  width: 100%;
   padding: 3rem 4rem;
   overflow-y: auto;
   background-color: #1c1c1c;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .right-panel h2 {
