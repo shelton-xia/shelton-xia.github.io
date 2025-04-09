@@ -39,7 +39,7 @@ body {
 
 .right-panel {
   flex: 1;
-  padding: 2rem 3rem;
+  padding: 3rem 4rem;
   overflow-y: auto;
   background-color: #fff;
 }
@@ -66,13 +66,37 @@ body {
 .panel-blue   .left-panel { background-color: #dbeafe; }
 .panel-orange .left-panel { background-color: #ffedd5; }
 
-/* Blog cards, share buttons, footer etc. */
-.blog-meta {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+/* Homepage panel cards */
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+  width: 100%;
+  max-width: 960px;
 }
 
+.panel {
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Panel background colors */
+.panel-blue    { background-color: #dbeafe; }
+.panel-green   { background-color: #d1fae5; }
+.panel-yellow  { background-color: #fef9c3; }
+.panel-orange  { background-color: #ffedd5; }
+
+/* Footer & meta */
 footer {
   text-align: center;
   padding: 2rem 1rem 1rem;
@@ -90,16 +114,8 @@ footer {
   color: #222;
 }
 
-/* Mobile-friendly */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  .left-panel {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .right-panel {
-    padding: 1.5rem;
-  }
+.blog-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
 }
