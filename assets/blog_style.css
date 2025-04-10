@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(to right, #8e9eab, #eef2f3); /* lighter colors */
+  color: #222;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+.blog-card, .tool-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover, .tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.tool-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.button.blog-read-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2575fc;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f4f4f4;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #2d2d2d;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tool-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-2px);
+}
+
+.share-buttons {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.share-buttons a {
+  text-decoration: none;
+  margin: 0 0.5rem;
+  color: #0077cc;
+}
+.share-buttons a:hover {
+  text-decoration: underline;
+}
