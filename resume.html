@@ -1,64 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume | Chengxuan Xia</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <title>Resume - Chengxuan Xia</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .content-panel {
+      flex: 1;
+      max-width: 800px;
+      background-color: #1c1c1c;
+      color: #ddd;
+      padding: 40px;
+      text-align: left;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      min-height: 500px;
+    }
+
+    .content-panel h2 {
+      color: white;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .content-panel ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .content-panel li {
+      margin-bottom: 6px;
+    }
+
+    .resume-job {
+      margin-bottom: 20px;
+    }
+
+    .resume-job-title {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .resume-job-company {
+      font-style: italic;
+      color: #aaa;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .panels {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .content-panel {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-<body class="panel-yellow">
+<body>
   <div class="container">
-    <div class="left-panel">
-      <h1>Resume</h1>
-      <p>personal profile</p>
-    </div>
+    <h1>Chengxuan Xia</h1>
+    <p class="subtitle"><span id="typed-text"></span></p>
 
-    <div class="right-panel">
-      <h2>Professional Experience</h2>
-      <ul>
-        <li><strong>GenAI Engineer</strong> @ Walmart Global Tech (12/2024–Present)<br>
-        - Built EndGenius, an AI system for automated test generation and troubleshooting support.<br>
-        - Developed a routing agent system for dynamic function integration across agents.</li>
+    <div class="panels">
+      <div class="panel orange">
+        <div>
+          <div>Resume</div>
+          <small>career, skills, timeline</small>
+        </div>
+      </div>
 
-        <li><strong>Co-Founder</strong> @ Shelton Angelina LLC (02/2024–Present)<br>
-        - Built a startup offering privacy-preserving AI solutions for small businesses.</li>
+      <div class="content-panel">
+        <h2>Summary</h2>
+        <p>Over 4 years of AI and engineering experience. Proficient in search, recommendation, LLM function design, and full-stack systems. Skilled in real-world data mining, problem solving, and cross-functional collaboration.</p>
 
-        <li><strong>Backend Engineer, Machine Learning</strong> @ Petal.org (09/2023–06/2024)<br>
-        - Created Approvo.ai (RAG + LLM) for medical device recommendation and template generation.<br>
-        - Fine-tuned LLMs to understand and generate clinical trial documentation.<br>
-        - Developed GPT-Trainer for Langchain-based function API integration and agent sharing.</li>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Languages:</strong> Python, Java, R, Matlab, SQL, JavaScript</li>
+          <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Langchain, Pandas</li>
+          <li><strong>Tools:</strong> Git, Docker, Spark, AWS, Kubernetes, SageMaker</li>
+          <li><strong>Other:</strong> Flask, Selenium, Oracle, Unix/Linux</li>
+        </ul>
 
-        <li><strong>Capstone Project</strong> @ Adobe Inc. (03/2023–12/2023)<br>
-        - Built web-based UI for prompt engineering and multi-turn prompt refinement.<br>
-        - Created a multimedia AI system using LLM + Stable Diffusion for enriched T2I guidance.</li>
+        <h2>Professional Experience</h2>
 
-        <li><strong>Machine Learning Engineer</strong> @ BearHug AI Inc. (06/2023–09/2023)<br>
-        - Built an AutoGPT agent using Langchain and Selenium.<br>
-        - Reduced webpage processing time from 2 minutes to 40 seconds.</li>
+        <div class="resume-job">
+          <div class="resume-job-title">GenAI Engineer</div>
+          <div class="resume-job-company">Walmart Global Tech · 12/2024 – Present</div>
+          <ul>
+            <li>Developed “EndGenius” — AI agent system automating test script generation with Code Copilot.</li>
+            <li>Built routing agent framework for multi-agent orchestration and dynamic expansion.</li>
+          </ul>
+        </div>
 
-        <li><strong>Software Engineer, Machine Learning</strong> @ Paoding Tech (09/2020–07/2022)<br>
-        - Built a weak-supervision system for financial document labeling (6M+ labeled data).<br>
-        - Saved 6 months of work and $20,000 in human annotation cost.</li>
-      </ul>
+        <div class="resume-job">
+          <div class="resume-job-title">Co-Founder</div>
+          <div class="resume-job-company">SAAI Solution · 02/2024 – Present</div>
+          <ul>
+            <li>Founded AI consulting startup delivering privacy-safe, full-stack AI tools to small businesses.</li>
+          </ul>
+        </div>
 
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Java, R, Matlab, SQL, JavaScript</li>
-        <li><strong>Frameworks & Tools:</strong> PyTorch, TensorFlow, Langchain, Selenium, Pandas</li>
-        <li><strong>Platforms:</strong> AWS, Kubernetes, Docker, SageMaker, Flask, Spark</li>
-        <li><strong>Development:</strong> Git, GitHub, Linux, CI/CD, Oracle, Sublime, SVN</li>
-      </ul>
+        <div class="resume-job">
+          <div class="resume-job-title">Backend ML Engineer</div>
+          <div class="resume-job-company">Petal.org · 09/2023 – 06/2024</div>
+          <ul>
+            <li>Led GPT-Trainer project for building customizable chatbot agents with Langchain and RAG.</li>
+            <li>Built Approvo.ai for FDA medical document generation, saving doctors 5+ hours per week.</li>
+          </ul>
+        </div>
 
-      <h2>Education</h2>
-      <ul>
-        <li>M.S. Natural Language Processing – University of California, Santa Cruz (GPA: 3.9/4.0)</li>
-        <li>M.S. Computer Science – University of Chinese Academy of Sciences (GPA: 3.7/4.0)</li>
-        <li>B.S. Physics – University of Chinese Academy of Sciences</li>
-      </ul>
+        <div class="resume-job">
+          <div class="resume-job-title">Capstone Researcher (LLM + Diffusion)</div>
+          <div class="resume-job-company">Adobe · 03/2023 – 12/2023</div>
+          <ul>
+            <li>Built a prompt-enrichment system to guide non-technical users in text-to-image generation.</li>
+          </ul>
+        </div>
 
-      <p><a href="assets/resume.pdf" target="_blank">📄 View Full Resume (PDF)</a></p>
-      <p><a href="index.html">← Back to homepage</a></p>
+        <div class="resume-job">
+          <div class="resume-job-title">ML Engineer</div>
+          <div class="resume-job-company">BearHug AI · 06/2023 – 09/2023</div>
+          <ul>
+            <li>Developed AutoGPT-style agent for browser-based dynamic web automation using Langchain + Selenium.</li>
+          </ul>
+        </div>
+
+        <div class="resume-job">
+          <div class="resume-job-title">ML Software Engineer</div>
+          <div class="resume-job-company">Paoding Tech · 09/2020 – 07/2022</div>
+          <ul>
+            <li>Trained transformer-based weak supervision labeler for financial document annotation. Saved 6 months of manual work and $20,000.</li>
+          </ul>
+        </div>
+
+        <h2>Education</h2>
+        <ul>
+          <li><strong>M.S. in Natural Language Processing</strong> — UC Santa Cruz (GPA: 3.9)</li>
+          <li><strong>M.S. in Computer Science</strong> — UCAS (GPA: 3.7)</li>
+          <li><strong>B.S. in Physics</strong> — UCAS</li>
+        </ul>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+      </div>
     </div>
   </div>
+
+  <!-- Typing effect -->
+  <script>
+    const words = [
+      "GenAI Engineer",
+      "NLP Specialist",
+      "Full Stack Builder",
+      "SAAI Co-Founder"
+    ];
+
+    let i = 0, j = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseAfterTyping = 500;
+
+    function typeEffect() {
+      const typedText = document.getElementById("typed-text");
+      const word = words[i];
+
+      if (!isDeleting) {
+        typedText.textContent = word.substring(0, j + 1);
+        j++;
+
+        if (j === word.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseAfterTyping);
+          return;
+        }
+      } else {
+        typedText.textContent = word.substring(0, j - 1);
+        j--;
+
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
+    }
+
+    typeEffect();
+  </script>
 </body>
 </html>
