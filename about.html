@@ -12,7 +12,7 @@
     }
 
     .top-header h1 {
-      font-size: 3em;
+      font-size: 3.2em;
       margin-bottom: 10px;
     }
 
@@ -27,54 +27,34 @@
       justify-content: center;
       max-width: 1200px;
       margin: 40px auto 80px auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      border-radius: 12px;
-      overflow: hidden;
+      gap: 30px;
     }
 
-    .panel-left {
+    .panel-static {
       width: 200px;
+      height: 500px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
       background: linear-gradient(145deg, #00cfff, #006aff);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .panel-left::before {
-      content: "";
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 120px;
-      background-image: url('assets/info-icon.svg'); /* Optional: replace or remove */
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.1;
-    }
-
-    .panel-left h2 {
       font-size: 1.5em;
-      margin-top: 180px;
-      z-index: 2;
-    }
-
-    .panel-left p {
-      font-size: 0.9em;
-      opacity: 0.7;
-      z-index: 2;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      position: relative;
     }
 
     .content-right {
       flex: 1;
       background-color: #1c1c1c;
       color: #ddd;
-      padding: 50px;
+      padding: 30px 20px;
       text-align: left;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      min-height: 500px;
     }
 
     .content-right h1 {
@@ -97,16 +77,18 @@
     @media (max-width: 768px) {
       .split-container {
         flex-direction: column;
+        align-items: center;
       }
 
-      .panel-left {
+      .panel-static {
         width: 100%;
         height: 200px;
-        padding: 20px;
+        margin-bottom: 20px;
       }
 
-      .panel-left h2 {
-        margin-top: 100px;
+      .content-right {
+        width: 100%;
+        padding: 20px;
       }
     }
   </style>
@@ -118,10 +100,7 @@
   </div>
 
   <div class="split-container">
-    <div class="panel-left">
-      <h2>About</h2>
-      <p>shelton</p>
-    </div>
+    <div class="panel-static">About</div>
     <div class="content-right">
       <h1>Hello, I'm Chengxuan (Shelton) Xia</h1>
       <p>
@@ -131,7 +110,7 @@
         I currently work at <strong>Walmart Global Tech</strong> on a GenAI engineering team and previously led backend and ML efforts at <strong>Petal.org</strong>, <strong>BearHug AI</strong>, and <strong>Adobe</strong>.
       </p>
       <p>
-        I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for small businesses.
+        I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for even small businesses.
       </p>
       <p>
         Outside of work, I enjoy camping, road trips, gardening, and watching wildlife. I find a lot of creative inspiration in the peace of nature.
@@ -143,8 +122,9 @@
   <!-- Typing effect -->
   <script>
     const words = [
-      "GenAI Engineer",
+      "AI Engineer",
       "NLP Specialist",
+      "GenAI Developer",
       "Full Stack Builder",
       "SAAI Co-Founder"
     ];
@@ -158,7 +138,7 @@
     function typeEffect() {
       const typedText = document.getElementById("typed-text");
       const word = words[i];
-      
+
       if (!isDeleting) {
         typedText.textContent = word.substring(0, j + 1);
         j++;
