@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research - Chengxuan Xia</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .content-panel {
+      flex: 1;
+      max-width: 800px;
+      background-color: #1c1c1c;
+      color: #ddd;
+      padding: 40px;
+      text-align: left;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      min-height: 500px;
+    }
+
+    .content-panel h2 {
+      color: white;
+      margin-top: 30px;
+    }
+
+    .content-panel ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .content-panel li {
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+
+    .content-panel a {
+      color: #bbb;
+      font-size: 0.9em;
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .panels {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .content-panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chengxuan Xia</h1>
+    <p class="subtitle"><span id="typed-text"></span></p>
+
+    <div class="panels">
+      <div class="panel red">
+        <div>
+          <div>Research</div>
+          <small>projects, papers, ideas</small>
+        </div>
+      </div>
+
+      <div class="content-panel">
+        <h2>Selected Research Papers</h2>
+        <ul>
+          <li>
+            Towards Efficient Quantity Retrieval from Text: an Approach via Description Parsing and Weak Supervision  
+            <br />
+            <a href="#" target="_blank">[View Paper]</a>
+          </li>
+          <li>
+            AI-Driven Sentiment Analytics: Unlocking Business Value in the E-Commerce Landscape  
+            <br />
+            <a href="#" target="_blank">[View Paper]</a>
+          </li>
+        </ul>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typing effect -->
+  <script>
+    const words = [
+      "GenAI Engineer",
+      "NLP Specialist",
+      "Full Stack Builder",
+      "SAAI Co-Founder"
+    ];
+
+    let i = 0, j = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseAfterTyping = 500;
+
+    function typeEffect() {
+      const typedText = document.getElementById("typed-text");
+      const word = words[i];
+
+      if (!isDeleting) {
+        typedText.textContent = word.substring(0, j + 1);
+        j++;
+
+        if (j === word.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseAfterTyping);
+          return;
+        }
+      } else {
+        typedText.textContent = word.substring(0, j - 1);
+        j--;
+
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
+    }
+
+    typeEffect();
+  </script>
+</body>
+</html>
