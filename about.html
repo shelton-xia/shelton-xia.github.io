@@ -5,26 +5,35 @@
   <title>About - Chengxuan Xia</title>
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #1c1c1c;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
+    .top-header {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .top-header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .top-header .subtitle {
+      color: #ccc;
+      font-size: 1.3em;
+      min-height: 40px;
     }
 
     .split-container {
       display: flex;
+      justify-content: center;
       max-width: 1200px;
-      margin: 60px auto;
-      min-height: 500px;
+      margin: 40px auto 80px auto;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
       border-radius: 12px;
       overflow: hidden;
     }
 
     .panel-left {
-      width: 280px;
+      width: 200px;
       background: linear-gradient(145deg, #00cfff, #006aff);
       display: flex;
       align-items: center;
@@ -41,7 +50,7 @@
       transform: translateX(-50%);
       width: 120px;
       height: 120px;
-      background-image: url('assets/info-icon.svg'); /* Replace with icon path */
+      background-image: url('assets/info-icon.svg'); /* Optional: replace or remove */
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -50,7 +59,7 @@
 
     .panel-left h2 {
       font-size: 1.5em;
-      margin-top: 180px; /* Makes it match homepage icon height */
+      margin-top: 180px;
       z-index: 2;
     }
 
@@ -103,6 +112,11 @@
   </style>
 </head>
 <body>
+  <div class="top-header">
+    <h1>Chengxuan Xia</h1>
+    <p class="subtitle"><span id="typed-text"></span></p>
+  </div>
+
   <div class="split-container">
     <div class="panel-left">
       <h2>About</h2>
@@ -117,7 +131,7 @@
         I currently work at <strong>Walmart Global Tech</strong> on a GenAI engineering team and previously led backend and ML efforts at <strong>Petal.org</strong>, <strong>BearHug AI</strong>, and <strong>Adobe</strong>.
       </p>
       <p>
-        I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for even small businesses.
+        I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for small businesses.
       </p>
       <p>
         Outside of work, I enjoy camping, road trips, gardening, and watching wildlife. I find a lot of creative inspiration in the peace of nature.
@@ -125,5 +139,49 @@
       <a href="index.html" class="back-link">← Back to Home</a>
     </div>
   </div>
+
+  <!-- Typing effect -->
+  <script>
+    const words = [
+      "GenAI Engineer",
+      "NLP Specialist",
+      "Full Stack Builder",
+      "SAAI Co-Founder"
+    ];
+
+    let i = 0, j = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseAfterTyping = 500;
+
+    function typeEffect() {
+      const typedText = document.getElementById("typed-text");
+      const word = words[i];
+      
+      if (!isDeleting) {
+        typedText.textContent = word.substring(0, j + 1);
+        j++;
+
+        if (j === word.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseAfterTyping);
+          return;
+        }
+      } else {
+        typedText.textContent = word.substring(0, j - 1);
+        j--;
+
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
+    }
+
+    typeEffect();
+  </script>
 </body>
 </html>
