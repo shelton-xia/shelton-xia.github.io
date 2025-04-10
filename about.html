@@ -5,42 +5,66 @@
   <title>About - Chengxuan Xia</title>
   <link rel="stylesheet" href="assets/style.css" />
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1c1c1c;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
     .split-container {
       display: flex;
       max-width: 1200px;
       margin: 60px auto;
+      min-height: 500px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
     }
 
     .panel-left {
+      width: 280px;
       background: linear-gradient(145deg, #00cfff, #006aff);
-      width: 200px;
-      min-height: 500px;
-      color: white;
-      text-align: center;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .panel-left::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      background-image: url('assets/info-icon.svg'); /* Replace with icon path */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.1;
     }
 
     .panel-left h2 {
-      margin-bottom: 10px;
       font-size: 1.5em;
+      margin-top: 180px; /* Makes it match homepage icon height */
+      z-index: 2;
     }
 
     .panel-left p {
-      font-size: 1em;
-      color: #fff;
-      opacity: 0.8;
+      font-size: 0.9em;
+      opacity: 0.7;
+      z-index: 2;
     }
 
     .content-right {
       flex: 1;
       background-color: #1c1c1c;
       color: #ddd;
-      padding: 40px;
+      padding: 50px;
       text-align: left;
     }
 
@@ -68,8 +92,12 @@
 
       .panel-left {
         width: 100%;
-        height: auto;
-        padding: 30px 0;
+        height: 200px;
+        padding: 20px;
+      }
+
+      .panel-left h2 {
+        margin-top: 100px;
       }
     }
   </style>
