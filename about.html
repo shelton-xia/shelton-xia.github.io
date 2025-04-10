@@ -5,64 +5,24 @@
   <title>About - Chengxuan Xia</title>
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    .top-header {
-      text-align: center;
-      margin-top: 60px;
-      margin-bottom: 40px;
-    }
-
-    .top-header h1 {
-      font-size: 3.2em;
-      margin-bottom: 10px;
-    }
-
-    .top-header .subtitle {
-      color: #ccc;
-      font-size: 1.3em;
-      min-height: 40px;
-    }
-
-    .split-container {
-      display: flex;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 40px auto 80px auto;
-      gap: 30px;
-    }
-
-    .panel-static {
-      width: 200px;
-      height: 500px;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-      background: linear-gradient(145deg, #00cfff, #006aff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-
-    .content-right {
+    .content-panel {
       flex: 1;
+      max-width: 800px;
       background-color: #1c1c1c;
       color: #ddd;
-      padding: 30px 20px;
+      padding: 40px;
       text-align: left;
       border-radius: 18px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
       min-height: 500px;
     }
 
-    .content-right h1 {
+    .content-panel h1 {
       color: white;
       margin-bottom: 20px;
     }
 
-    .content-right a {
+    .content-panel a {
       color: #bbb;
       text-decoration: underline;
     }
@@ -75,56 +35,51 @@
     }
 
     @media (max-width: 768px) {
-      .split-container {
+      .panels {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
       }
 
-      .panel-static {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-      }
-
-      .content-right {
-        width: 100%;
+      .content-panel {
         padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="top-header">
+  <div class="container">
     <h1>Chengxuan Xia</h1>
     <p class="subtitle"><span id="typed-text"></span></p>
-  </div>
 
-  <div class="split-container">
-    <div class="panel-static">About</div>
-    <div class="content-right">
-      <h1>Hello, I'm Chengxuan (Shelton) Xia</h1>
-      <p>
-        I’m an AI Engineer with over 4 years of experience across NLP, LLM applications, and full-stack development. I’ve built products ranging from AI agent systems to multimodal content generation tools.
-      </p>
-      <p>
-        I currently work at <strong>Walmart Global Tech</strong> on a GenAI engineering team and previously led backend and ML efforts at <strong>Petal.org</strong>, <strong>BearHug AI</strong>, and <strong>Adobe</strong>.
-      </p>
-      <p>
-        I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for even the smallest businesses.
-      </p>
-      <p>
-        Outside of work, I enjoy camping, road trips, gardening, and watching wildlife. I find a lot of creative inspiration in the peace of nature.
-      </p>
-      <a href="index.html" class="back-link">← Back to Home</a>
+    <!-- Match the homepage structure -->
+    <div class="panels">
+      <div class="panel blue">About</div>
+
+      <div class="content-panel">
+        <h1>Hello, I'm Chengxuan (Shelton) Xia</h1>
+        <p>
+          I’m an AI Engineer with over 4 years of experience across NLP, LLM applications, and full-stack development. I’ve built products ranging from AI agent systems to multimodal content generation tools.
+        </p>
+        <p>
+          I currently work at <strong>Walmart Global Tech</strong> on a GenAI engineering team and previously led backend and ML efforts at <strong>Petal.org</strong>, <strong>BearHug AI</strong>, and <strong>Adobe</strong>.
+        </p>
+        <p>
+          I’m also the founder of <a href="https://saaisolution.com" target="_blank">SAAI Solution</a>, a startup that provides AI consulting and privacy-focused tools for small businesses.
+        </p>
+        <p>
+          Outside of work, I enjoy camping, road trips, gardening, and watching wildlife. I find a lot of creative inspiration in the peace of nature.
+        </p>
+        <a href="index.html" class="back-link">← Back to Home</a>
+      </div>
     </div>
   </div>
 
   <!-- Typing effect -->
   <script>
     const words = [
-      "AI Engineer",
+      "GenAI Engineer",
       "NLP Specialist",
-      "GenAI Developer",
       "Full Stack Builder",
       "SAAI Co-Founder"
     ];
