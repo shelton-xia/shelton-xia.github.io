@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog - Chengxuan Xia</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .content-panel {
+      flex: 1;
+      max-width: 800px;
+      background-color: #1c1c1c;
+      color: #ddd;
+      padding: 40px;
+      text-align: left;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      min-height: 500px;
+    }
+
+    .post {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .post h3 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .post a {
+      color: #bbb;
+    }
+
+    .post p {
+      margin: 5px 0 10px;
+      color: #aaa;
+    }
+
+    .post .meta {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chengxuan Xia</h1>
+    <p class="subtitle"><span id="typed-text"></span></p>
+
+    <div class="panels">
+      <div class="panel green">
+        <div>
+          <div>Blog</div>
+          <small>thoughts, code, learnings</small>
+        </div>
+      </div>
+
+      <div class="content-panel" id="blog-list">
+        <h2>Latest Posts</h2>
+        <!-- Posts will be injected here -->
+        <a href="index.html" class="back-link">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typing effect -->
+  <script>
+    const words = [
+      "GenAI Engineer",
+      "NLP Specialist",
+      "Full Stack Builder",
+      "SAAI Co-Founder"
+    ];
+
+    let i = 0, j = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseAfterTyping = 500;
+
+    function typeEffect() {
+      const typedText = document.getElementById("typed-text");
+      const word = words[i];
+
+      if (!isDeleting) {
+        typedText.textContent = word.substring(0, j + 1);
+        j++;
+
+        if (j === word.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseAfterTyping);
+          return;
+        }
+      } else {
+        typedText.textContent = word.substring(0, j - 1);
+        j--;
+
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
+    }
+
+    typeEffect();
+  </script>
+
+  <!-- Load blog posts -->
+  <script>
+    fetch('blog-posts.json')
+      .then(res => res.json())
+      .then(posts => {
+        const list = document.getElementById('blog-list');
+        posts.forEach(post => {
+          const item = document.createElement('div');
+          item.className = 'post';
+          item.innerHTML = `
+            <h3><a href="blog/${post.filename}">${post.title}</a></h3>
+            <p class="meta">${post.date} · ${post.tags.join(', ')}</p>
+            <p>${post.summary}</p>
+          `;
+          list.insertBefore(item, list.querySelector('.back-link'));
+        });
+      });
+  </script>
+</body>
+</html>
