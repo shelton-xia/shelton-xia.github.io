@@ -78,10 +78,10 @@ h1 {
 }
 
 /* Panel Colors */
-.blue { background: linear-gradient(145deg, #00cfff, #006aff); }
-.green { background: linear-gradient(145deg, #a2f54a, #4ea40e); }
-.orange { background: linear-gradient(145deg, #ffcc00, #ff6600); }
-.red { background: linear-gradient(145deg, #ff7c7c, #cc0000); }
+.blue { background: linear-gradient(145deg, #a4c9e4, #7aaedc); }
+.green { background: linear-gradient(145deg, #b5d3af, #90b98a); }
+.orange { background: linear-gradient(145deg, #e7c9a1, #d1a978); }
+.red { background: linear-gradient(145deg, #e1b2b2, #c48c8c); }
 
 /* Footer */
 footer {
